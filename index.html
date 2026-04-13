@@ -10,6 +10,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   </head>
   <body>
+    <script>
+      // Handle SPA redirect from 404.html
+      (function() {
+        var q = new URLSearchParams(window.location.search);
+        var r = q.get('redirect');
+        if (r) {
+          q.delete('redirect');
+          var rest = q.toString();
+          window.history.replaceState(null, '', '/client-portal/' + r + (rest ? '?' + rest : ''));
+        }
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

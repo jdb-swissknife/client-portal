@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      // Single Page App redirect for GitHub Pages
+      // When a user navigates to /client-portal/leads directly,
+      // GitHub Pages serves this 404.html. We redirect to index.html
+      // with the path stored in the query string.
+      var l = window.location;
+      var seg = l.pathname.slice('/client-portal/'.length);
+      if (seg) {
+        l.replace(l.origin + '/client-portal/' + (l.search ? l.search + '&' : '?') + 'redirect=' + encodeURIComponent(seg));
+      } else {
+        l.replace(l.origin + '/client-portal/');
+      }
+    </script>
+  </head>
+</html>
