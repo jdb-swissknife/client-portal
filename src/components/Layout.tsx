@@ -1,11 +1,13 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useAuth } from '../lib/auth'
-import { LayoutDashboard, Users, Activity as ActivityIcon, LogOut } from 'lucide-react'
+import { LayoutDashboard, Users, Activity as ActivityIcon, DollarSign, BarChart3, LogOut } from 'lucide-react'
 
 const navItems = [
   { name: 'Dashboard', icon: LayoutDashboard, path: '/' },
+  { name: 'Pipeline', icon: DollarSign, path: '/pipeline' },
   { name: 'Leads', icon: Users, path: '/leads' },
   { name: 'Activity', icon: ActivityIcon, path: '/activity' },
+  { name: 'Reports', icon: BarChart3, path: '/reports' },
 ]
 
 export default function Layout({ children }: { children: React.ReactNode }) {
