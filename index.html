@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MindVault Client Portal</title>
+    <meta name="description" content="Your AI agents, working. See what they did today." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script type="module" crossorigin src="/client-portal/assets/index-UMMd8VgV.js"></script>
+    <link rel="stylesheet" crossorigin href="/client-portal/assets/index-CyWttMK-.css">
+  </head>
+  <body>
+    <script>
+      // Handle SPA redirect from 404.html
+      (function() {
+        var q = new URLSearchParams(window.location.search);
+        var r = q.get('redirect');
+        if (r) {
+          q.delete('redirect');
+          var rest = q.toString();
+          window.history.replaceState(null, '', '/client-portal/' + r + (rest ? '?' + rest : ''));
+        }
+      })();
+    </script>
+    <div id="root"></div>
+  </body>
+</html>
